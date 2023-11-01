@@ -23,6 +23,13 @@ block content
   div(class="container-fluid")
     div(class="row")
       each item,index in results
-        div(class="col-sm-2") flavour: #{item.icecream_flavour}
-        div(class="col-sm-2") Quantity: #{item.icecream_quantity}
-        div(class="col-sm-2") Cost: #{item.icecream_cost}
+        div(class="col-sm-2", onclick=`buy(${index})`) flavour: #{item.icecream_flavour}
+        div(class="col-sm-2", onclick=`buy(${index})`) Quantity: #{item.icecream_quantity}
+        div(class="col-sm-2", onclick=`buy(${index})`) Cost: #{item.icecream_cost}
+        br
+        br
+        
+  script.
+    function buy(itemNum){
+      alert(`You purchased item ${itemNum+1}`)
+    }
